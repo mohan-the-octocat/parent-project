@@ -20,37 +20,6 @@ jobs:
               with:
                   java-version: '11'
                   distribution: 'adopt'
-# print the current directory and the files in it
-            - name: Print current directory
-              run: pwd | ls -l
- 
-            - name: Submit backend dependency snapshot
-              uses: advanced-security/maven-dependency-submission-action@v3.0.2
-              with:
-                directory: "./parent-project-backend/"
-                token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
-                snapshot-dependency-file-name: "./parent-project-backend/pom.xml"
-        
-            - name: Submit frontend snapshot
-              uses: advanced-security/maven-dependency-submission-action@v3.0.2
-              with:
-                  directory: "./parent-project-frontend/"
-                  token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
-                  snapshot-dependency-file-name: "./parent-project-frontend/pom.xml"
-  
-            - name: Submit Service snapshot
-              uses: advanced-security/maven-dependency-submission-action@v3.0.2
-              with:
-                directory: "./service/"
-                token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
-                snapshot-dependency-file-name: "./service/pom.xml"
-            
-            - name: Submit Web snapshot
-              uses: advanced-security/maven-dependency-submission-action@v3.0.2
-              with:
-                directory: "./webapp/"
-                token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
-                snapshot-dependency-file-name: "./webapp/pom.xml"
             
             - name: Submit master snapshot
               uses: advanced-security/maven-dependency-submission-action@v3.0.2
