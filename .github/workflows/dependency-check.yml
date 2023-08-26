@@ -24,7 +24,9 @@ jobs:
               run: mvn -B package --file parent-project/pom.xml
             - name: Maven Dependency Tree Dependency Submission
               uses: advanced-security/maven-dependency-submission-action@v3.0.2
-              directory: /home/runner/work/parent-project/
+              with:
+                directory: /home/runner/work/parent-project/
+
 
 
     
