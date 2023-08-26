@@ -29,7 +29,8 @@ jobs:
               uses: advanced-security/maven-dependency-submission-action@v3.0.2
               with:
                 token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
-                snapshot-include-file-name: false
+                snapshot-include-file-name: true
+                snapshot-include-file-path: true
 
 
 
