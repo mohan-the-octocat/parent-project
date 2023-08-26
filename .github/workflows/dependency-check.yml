@@ -51,6 +51,13 @@ jobs:
                 directory: "./webapp/"
                 token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
                 snapshot-dependency-file-name: "./webapp/pom.xml"
+            
+            - name: Submit master snapshot
+              uses: advanced-security/maven-dependency-submission-action@v3.0.2
+              with:
+                directory: "./"
+                token: ${{ secrets.DEPENDENCY_SUBMISSION_KEY }}
+                snapshot-dependency-file-name: "./pom.xml"
     
 
 
